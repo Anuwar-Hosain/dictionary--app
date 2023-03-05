@@ -14,12 +14,18 @@ body {
   justify-content: center;
   margin-top: 10px;
 }
+
 .container {
   width: 30%;
   background-color: #ffffff;
-  padding: 80px 50px;
+  padding: 10px 50px;
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
+}
+.anu {
+  text-align: center;
+  padding-bottom: 70px;
+  color: #e21b5a;
 }
 .search-box {
   display: flex;
