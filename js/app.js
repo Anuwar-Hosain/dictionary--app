@@ -29,9 +29,11 @@ const displayDictionary = (data) => {
               element.definitions[0].definition
             }</p>
             <p><samp class="bold">Synonyms : </samp>${
-              element.synonyms ? element.synonyms : "No Synonyms"
+              element.synonyms.length ? element.synonyms : "No Synonyms"
             }</p>
-            <p><samp class="bold">Antonyms : </samp></p>
+            <p><samp class="bold">Antonyms : </samp>${
+              element.antonyms.length ? element.antonyms : "No Antonyms"
+            }</p>
          </div>
     </div>
     `;

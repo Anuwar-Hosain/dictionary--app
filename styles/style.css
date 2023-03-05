@@ -86,6 +86,8 @@ body {
 }
 .noun-text p {
   margin-bottom: 10px;
+  width: 100%;
+  word-wrap: break-word;
 }
 .bold {
   font-weight: 700;
