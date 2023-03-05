@@ -1,3 +1,5 @@
+const sound = document.getElementById("sound");
+
 const dictionaryLoad = (word) => {
   const URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
   fetch(URL)
@@ -7,6 +9,8 @@ const dictionaryLoad = (word) => {
 };
 // --------------display show section---------------
 const displayDictionary = (data) => {
+  console.log(data[0].phonetics[0]);
+  sound.setAttribute("src", `${data[0].phonetics[0].audio}`);
   // word text added
   const details = document.getElementById("div");
   details.innerHTML = "";
@@ -15,7 +19,7 @@ const displayDictionary = (data) => {
   //   meanings section
   const loop = data[0].meanings;
   loop.forEach((element) => {
-    console.log(element.synonyms);
+    console.log(element);
     const detailsDiv = document.createElement("div");
     detailsDiv.classList.add("details");
     detailsDiv.innerHTML = `
@@ -42,11 +46,13 @@ const displayDictionary = (data) => {
 };
 
 // -------------search btn section-------------
-
 const searchBtn = () => {
   const inputField = document.getElementById("inp-word");
   const inputFieldValue = inputField.value;
   dictionaryLoad(inputFieldValue);
   inputField.value = "";
 };
-dictionaryLoad("hello");
+// -------------Audio section--------------------
+const audioBtn = () => {
+  sound.play();
+};
